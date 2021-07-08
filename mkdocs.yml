@@ -1,0 +1,48 @@
+site_name: pySatellite
+site_url: https://pySatellite.github.io/
+
+# mkdocs.yml
+theme:
+  name: "material"
+  language: kr
+  features:
+    - navigation.sections
+    - toc.integrate
+  palette:
+    - scheme: default
+      toggle:
+        primary: white
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
+plugins:
+  - search
+  - mermaid2:
+      version: 8.6.4
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.pathconverter
+  - pymdownx.smartsymbols
+  - pymdownx.tabbed
+  - pymdownx.highlight
+  - pymdownx.superfences:
+      # make exceptions to highlighting of code:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
+  - pymdownx.progressbar
+  - fontawesome_markdown
+
+extra_css: [css/pymdownx.css]
+
+extra_javascript:
+    - https://unpkg.com/mermaid@8.7.0/dist/mermaid.min.js
