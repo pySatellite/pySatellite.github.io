@@ -33,7 +33,7 @@ plugins:
         python:
           setup_commands:
             - import sys
-            - sys.path.append("./src/pysatellite")
+            - sys.path.append("src")
 
 markdown_extensions:
   - admonition
