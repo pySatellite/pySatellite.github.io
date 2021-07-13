@@ -1,7 +1,10 @@
 ## pySatellite
-- https://pysatellite.github.io
+- Simulate satellite tracking.
+- It tells the story of space debris and satellite collisions.
+- To Infinity, and Beyond!
 
-## preparation
-- https://www.mkdocs.org
-- https://squidfunk.github.io/mkdocs-material
-- https://facelessuser.github.io/pymdown-extensions
+## use
+[https://pysatellite.github.io/#use](https://pysatellite.github.io/#use)
+
+## pypi
+[https://pypi.org/project/pySatellite](https://pypi.org/project/pySatellite/)

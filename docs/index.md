@@ -2,10 +2,26 @@
 
 ![Screenshot](img/satellite-logo.png)
 
-```python
-from pysatellite import Satellite
+## pySatellite
+- Simulate satellite tracking.
+- It tells the story of space debris and satellite collisions.
+- To Infinity, and Beyond!
 
-Satellite.launch()
+## install
+```bash
+pip install pySatellite
 ```
 
-[Subscribe to our mailing list](#){ .md-button }
+## use
+
+```python
+from pysatellite import Rocket
+from pysatellite import Satellite
+
+Rocket.launch()
+Satellite.coordinates()
+```
+
+[To Infinity, and Beyond!](https://pypi.org/project/pySatellite/){ .md-button }
+
+
