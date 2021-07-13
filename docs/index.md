@@ -7,3 +7,5 @@ from pysatellite import Satellite
 
 Satellite.launch()
 ```
+
+[Subscribe to our mailing list](#){ .md-button }

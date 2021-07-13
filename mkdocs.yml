@@ -3,10 +3,15 @@ site_url: https://pySatellite.github.io/
 
 # mkdocs.yml
 theme:
+  logo: img/satellite-logo.png
+  favicon: img/favicon-16x16.png
   name: "material"
   language: kr
   features:
+    - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
+    - navigation.top
     - toc.integrate
   palette:
     - scheme: default
@@ -41,6 +46,12 @@ markdown_extensions:
           format: !!python/name:mermaid2.fence_mermaid
   - pymdownx.progressbar
   - fontawesome_markdown
+
+extra:
+  homepage: https://pySatellite.github.io
+  analytics:
+    provider: google
+    property: G-GEXKYCBHW7
 
 extra_css: [css/pymdownx.css]
 
