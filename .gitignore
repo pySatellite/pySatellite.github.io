@@ -1,2 +1,5 @@
 site/
 .idea/
+build/
+dist/
+pysatellite.egg-info/

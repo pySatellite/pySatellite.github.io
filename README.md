@@ -1,7 +1,14 @@
 ## pySatellite
-- https://pysatellite.github.io
+- Simulate satellite tracking.
+- It tells the story of space debris and satellite collisions.
+- To Infinity, and Beyond!
 
-## preparation
-- https://www.mkdocs.org
-- https://squidfunk.github.io/mkdocs-material
-- https://facelessuser.github.io/pymdown-extensions
+## use
+
+```python
+from src.pysatellite import Rocket
+from src.pysatellite import Satellite
+
+Rocket.launch()
+Satellite.coordinates()
+```

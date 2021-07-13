@@ -28,6 +28,12 @@ plugins:
   - search
   - mermaid2:
       version: 8.6.4
+  - mkdocstrings:
+      handlers:
+        python:
+          setup_commands:
+            - import sys
+            - sys.path.append("./src/pysatellite")
 
 markdown_extensions:
   - admonition
@@ -57,3 +63,8 @@ extra_css: [css/pymdownx.css]
 
 extra_javascript:
     - https://unpkg.com/mermaid@8.7.0/dist/mermaid.min.js
+
+nav:
+  - About: index.md
+  - Docstring:
+      - pysatellite: docs-pysatellite.md
