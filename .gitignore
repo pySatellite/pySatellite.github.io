@@ -3,3 +3,4 @@ site/
 build/
 dist/
 pysatellite.egg-info/
+*/__pycache__/
