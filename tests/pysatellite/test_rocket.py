@@ -1,4 +1,4 @@
-from src.pysatellite import Rocket
+from pysatellite.rocket import Rocket
 
 
 def test_launch():

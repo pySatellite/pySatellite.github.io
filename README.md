@@ -4,11 +4,7 @@
 - To Infinity, and Beyond!
 
 ## use
+[https://pysatellite.github.io/#use](https://pysatellite.github.io/#use)
 
-```python
-from src.pysatellite import Rocket
-from src.pysatellite import Satellite
-
-Rocket.launch()
-Satellite.coordinates()
-```
+## pypi
+[https://pypi.org/project/pySatellite](https://pypi.org/project/pySatellite/)

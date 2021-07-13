@@ -1,4 +1,4 @@
-from satellite import Satellite
+from pysatellite.satellite import Satellite
 
 
 def test_coordinates():
