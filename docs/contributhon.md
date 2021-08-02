@@ -61,7 +61,7 @@ Coverage XML written to file report/coverage/coverage.xml
 ========== 2 passed in 10.14s ==========
 ```
 
-### 문서화
+### Documentation
 - Create a documentation website by automatically reading the Google-style docstring written in the code. Make sure that the module you added or modified has an appropriate explanation.
 - 코드에 작성된 구글 스타일 docstring 을 자동으로 읽어 문서화 웹사이트를 만들어 냅니다. 당신이 추가하거나 수정한 모듈에 적절한 설명이 있는지 확인하세요.
 ```base
