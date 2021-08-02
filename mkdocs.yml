@@ -68,3 +68,4 @@ nav:
   - About: index.md
   - Docstring:
       - pysatellite: docs-pysatellite.md
+  - "How to contribute": contributhon.md
