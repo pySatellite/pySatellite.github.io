@@ -177,6 +177,11 @@
 <nav aria-label="cli" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#pysatellite.cli.cli_where_are_you_now">
+    cli_where_are_you_now()
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#pysatellite.cli.ping">
     ping()
   </a>
@@ -184,6 +189,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#pysatellite.cli.what_are_you_doing">
     what_are_you_doing()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pysatellite.cli.where_are_you_now">
+    where_are_you_now()
   </a>
 </li>
 </ul>
@@ -271,6 +281,51 @@
 <div class="doc doc-contents">
 <div class="doc doc-children">
 <div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="pysatellite.cli.cli_where_are_you_now">
+<code class="highlight language-python"><span class="n">cli_where_are_you_now</span><span class="p">()</span></code>
+</h3>
+<div class="doc doc-contents">
+<p>인공위성의 현 위치 정보등을 수신</p>
+<p>API_KEY 는 https://www.n2yo.com/api/ 에서 발급</p>
+<p><strong>Examples:</strong></p>
+<p>Examples should be written in doctest format, and should illustrate how
+to use the function.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">pySatellite</span><span class="o">-</span><span class="n">where</span><span class="o">-</span><span class="n">are</span><span class="o">-</span><span class="n">you</span><span class="o">-</span><span class="n">now</span> <span class="mi">1</span> <span class="n">InvalidAPIKey</span>
+<span class="p">{</span><span class="s2">"error"</span><span class="p">:</span> <span class="s2">"Invalid API Key!"</span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">pySatellite</span><span class="o">-</span><span class="n">where</span><span class="o">-</span><span class="n">are</span><span class="o">-</span><span class="n">you</span><span class="o">-</span><span class="n">now</span> <span class="mi">1</span> <span class="o">**-****-***-****</span>
+<span class="p">{</span><span class="s2">"info"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"satname"</span><span class="p">:</span> <span class="s2">"SL-1 R/B"</span><span class="p">,</span> <span class="s2">"satid"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"transactionscount"</span><span class="p">:</span> <span class="mi">11</span><span class="p">},</span> <span class="s2">"positions"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"satlatitude"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"satlongitude"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"sataltitude"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"azimuth"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"elevation"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"ra"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"dec"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"timestamp"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"eclipsed"</span><span class="p">:</span> <span class="n">false</span><span class="p">}]}</span>
+</code></pre></div>
+<details class="quote">
+<summary>Source code in <code>pysatellite/cli.py</code></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">cli_where_are_you_now</span><span class="p">():</span>
+    <span class="sd">"""인공위성의 현 위치 정보등을 수신</span>
+
+<span class="sd">    API_KEY 는 https://www.n2yo.com/api/ 에서 발급</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        Examples should be written in doctest format, and should illustrate how</span>
+<span class="sd">        to use the function.</span>
+
+<span class="sd">        &gt;&gt;&gt; pySatellite-where-are-you-now 1 InvalidAPIKey</span>
+<span class="sd">        {"error": "Invalid API Key!"}</span>
+
+<span class="sd">        &gt;&gt;&gt; pySatellite-where-are-you-now 1 **-****-***-****</span>
+<span class="sd">        {"info": {"satname": "SL-1 R/B", "satid": 1, "transactionscount": 11}, "positions": [{"satlatitude": 0, "satlongitude": 0, "sataltitude": 0, "azimuth": 0, "elevation": 0, "ra": 0, "dec": 0, "timestamp": 0, "eclipsed": false}]}</span>
+
+<span class="sd">    Returns:</span>
+
+<span class="sd">    """</span>
+    <span class="n">satellite_id</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">api_key</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">where_are_you_now</span><span class="p">(</span><span class="n">satellite_id</span><span class="p">,</span> <span class="n">api_key</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
 <h3 class="doc doc-heading" id="pysatellite.cli.ping">
 <code class="highlight language-python"><span class="n">ping</span><span class="p">()</span></code>
 </h3>
@@ -302,7 +357,7 @@
 <tbody>
 <tr>
 <td><code>str</code></td>
-<td></td>
+<td><p>블라블라~</p></td>
 </tr>
 </tbody>
 </table> <div class="admonition todo">
@@ -319,6 +374,7 @@
     <span class="sd">"""지금 뭐하고 있는지 묻는 질문에 답을함</span>
 
 <span class="sd">    Returns:</span>
+<span class="sd">        블라블라~</span>
 
 <span class="sd">    Todo:</span>
 <span class="sd">        - 외계어 지원</span>
@@ -331,6 +387,103 @@
              <span class="s2">"wlrn wndnlfmf ehfrh dlTdj. dh! djwlfjqek."</span><span class="p">]</span>
 
     <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">대답_뭉치</span><span class="p">)</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="pysatellite.cli.where_are_you_now">
+<code class="highlight language-python"><span class="n">where_are_you_now</span><span class="p">(</span><span class="n">satellite_id</span><span class="p">,</span> <span class="n">api_key</span><span class="p">,</span> <span class="n">observer_lat</span><span class="o">=</span><span class="mf">37.44</span><span class="p">,</span> <span class="n">observer_lng</span><span class="o">=</span><span class="mf">126.96</span><span class="p">,</span> <span class="n">observer_alt</span><span class="o">=</span><span class="mf">592.0</span><span class="p">,</span> <span class="n">seconds</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code>
+</h3>
+<div class="doc doc-contents">
+<p>인공위성의 위도,경도,고도 등의 정보 수신</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>satellite_id</code></td>
+<td><code>int</code></td>
+<td><p>인공위성 식별 id</p></td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>api_key</code></td>
+<td><code>str</code></td>
+<td><p>api key</p></td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>observer_lat</code></td>
+<td><code></code></td>
+<td><p>Observer's latitide (decimal degrees format)</p></td>
+<td><code>37.44</code></td>
+</tr>
+<tr>
+<td><code>observer_lng</code></td>
+<td><code></code></td>
+<td><p>Observer's longitude (decimal degrees format)</p></td>
+<td><code>126.96</code></td>
+</tr>
+<tr>
+<td><code>observer_alt</code></td>
+<td><code></code></td>
+<td><p>Observer's altitude above sea level in meters</p></td>
+<td><code>592.0</code></td>
+</tr>
+<tr>
+<td><code>seconds</code></td>
+<td><code></code></td>
+<td><p>Number of future positions to return. Each second is a position. Limit 300 seconds</p></td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dict</code></td>
+<td><p>https://www.n2yo.com/api/#positions</p></td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>pysatellite/cli.py</code></summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">where_are_you_now</span><span class="p">(</span><span class="n">satellite_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">api_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">observer_lat</span><span class="o">=</span><span class="mf">37.44</span><span class="p">,</span> <span class="n">observer_lng</span><span class="o">=</span><span class="mf">126.96</span><span class="p">,</span> <span class="n">observer_alt</span><span class="o">=</span><span class="mf">592.0</span><span class="p">,</span> <span class="n">seconds</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sd">"""인공위성의 위도,경도,고도 등의 정보 수신</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        satellite_id: 인공위성 식별 id</span>
+<span class="sd">        api_key: api key</span>
+<span class="sd">        observer_lat: Observer's latitide (decimal degrees format)</span>
+<span class="sd">        observer_lng: Observer's longitude (decimal degrees format)</span>
+<span class="sd">        observer_alt: Observer's altitude above sea level in meters</span>
+<span class="sd">        seconds: Number of future positions to return. Each second is a position. Limit 300 seconds</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        https://www.n2yo.com/api/#positions</span>
+<span class="sd">    """</span>
+
+    <span class="n">URL</span> <span class="o">=</span> <span class="s2">"https://api.n2yo.com/rest/v1/satellite/positions"</span>
+    <span class="n">api</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">URL</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">satellite_id</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">observer_lat</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">observer_lng</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">observer_alt</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">seconds</span><span class="si">}</span><span class="s2">/&amp;apiKey=</span><span class="si">{</span><span class="n">api_key</span><span class="si">}</span><span class="s2">"</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">api</span><span class="p">)</span>
+    <span class="n">json_dict</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">json_dict</span>
 </code></pre></div>
 </details>
 </div>
