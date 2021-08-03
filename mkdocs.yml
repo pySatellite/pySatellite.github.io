@@ -1,5 +1,7 @@
 site_name: pySatellite
 site_url: https://pySatellite.github.io/
+repo_url: https://github.com/pySatellite/pySatellite.github.io
+repo_name: github/pySatellite
 
 # mkdocs.yml
 theme:
