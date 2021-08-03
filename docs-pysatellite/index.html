@@ -7,9 +7,9 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://pySatellite.github.io/docs-pysatellite/" rel="canonical"/>
 <link href="../img/favicon-16x16.png" rel="icon"/>
-<meta content="mkdocs-1.2.2, mkdocs-material-7.2.2" name="generator"/>
+<meta content="mkdocs-1.2.2, mkdocs-material-7.2.0" name="generator"/>
 <title>pysatellite - pySatellite</title>
-<link href="../assets/stylesheets/main.1118c9be.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/main.fe914879.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.ba0d045b.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
@@ -27,7 +27,7 @@
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
 <a class="md-skip" href="#pysatellite">
-          콘텐츠로 이동
+          Skip to content
         </a>
 </div>
 <div data-md-component="announce">
@@ -78,8 +78,8 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </label>
-<nav aria-label="검색" class="md-search__options">
-<button aria-label="지우기" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
 </button>
 </nav>
@@ -88,7 +88,7 @@
 <div class="md-search__scrollwrap" data-md-scrollfix="">
 <div class="md-search-result" data-md-component="search-result">
 <div class="md-search-result__meta">
-            검색 초기화
+            Initializing search
           </div>
 <ol class="md-search-result__list"></ol>
 </div>
@@ -197,23 +197,8 @@
 <nav aria-label="cli" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#pysatellite.cli.cli_where_are_you_now">
-    cli_where_are_you_now()
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#pysatellite.cli.ping">
     ping()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#pysatellite.cli.what_are_you_doing">
-    what_are_you_doing()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#pysatellite.cli.where_are_you_now">
-    where_are_you_now()
   </a>
 </li>
 </ul>
@@ -304,51 +289,6 @@
 <div class="doc doc-contents">
 <div class="doc doc-children">
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="pysatellite.cli.cli_where_are_you_now">
-<code class="highlight language-python"><span class="n">cli_where_are_you_now</span><span class="p">()</span></code>
-</h3>
-<div class="doc doc-contents">
-<p>인공위성의 위치 및 정보를 알고싶다면 사용해 보세요.</p>
-<p>API_KEY 는 https://www.n2yo.com/api/ 에서 발급</p>
-<p><strong>Examples:</strong></p>
-<p>Examples should be written in doctest format, and should illustrate how
-to use the function.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">pySatellite</span><span class="o">-</span><span class="n">where</span><span class="o">-</span><span class="n">are</span><span class="o">-</span><span class="n">you</span><span class="o">-</span><span class="n">now</span> <span class="mi">1</span> <span class="n">InvalidAPIKey</span>
-<span class="p">{</span><span class="s2">"error"</span><span class="p">:</span> <span class="s2">"Invalid API Key!"</span><span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">pySatellite</span><span class="o">-</span><span class="n">where</span><span class="o">-</span><span class="n">are</span><span class="o">-</span><span class="n">you</span><span class="o">-</span><span class="n">now</span> <span class="mi">1</span> <span class="o">**-****-***-****</span>
-<span class="p">{</span><span class="s2">"info"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"satname"</span><span class="p">:</span> <span class="s2">"SL-1 R/B"</span><span class="p">,</span> <span class="s2">"satid"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"transactionscount"</span><span class="p">:</span> <span class="mi">11</span><span class="p">},</span> <span class="s2">"positions"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"satlatitude"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"satlongitude"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"sataltitude"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"azimuth"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"elevation"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"ra"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"dec"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"timestamp"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"eclipsed"</span><span class="p">:</span> <span class="n">false</span><span class="p">}]}</span>
-</code></pre></div>
-<details class="quote">
-<summary>Source code in <code>pysatellite/cli.py</code></summary>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">cli_where_are_you_now</span><span class="p">():</span>
-    <span class="sd">"""인공위성의 위치 및 정보를 알고싶다면 사용해 보세요.</span>
-
-<span class="sd">    API_KEY 는 https://www.n2yo.com/api/ 에서 발급</span>
-
-<span class="sd">    Examples:</span>
-<span class="sd">        Examples should be written in doctest format, and should illustrate how</span>
-<span class="sd">        to use the function.</span>
-
-<span class="sd">        &gt;&gt;&gt; pySatellite-where-are-you-now 1 InvalidAPIKey</span>
-<span class="sd">        {"error": "Invalid API Key!"}</span>
-
-<span class="sd">        &gt;&gt;&gt; pySatellite-where-are-you-now 1 **-****-***-****</span>
-<span class="sd">        {"info": {"satname": "SL-1 R/B", "satid": 1, "transactionscount": 11}, "positions": [{"satlatitude": 0, "satlongitude": 0, "sataltitude": 0, "azimuth": 0, "elevation": 0, "ra": 0, "dec": 0, "timestamp": 0, "eclipsed": false}]}</span>
-
-<span class="sd">    Returns:</span>
-
-<span class="sd">    """</span>
-    <span class="n">satellite_id</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">api_key</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-    <span class="n">d</span> <span class="o">=</span> <span class="n">where_are_you_now</span><span class="p">(</span><span class="n">satellite_id</span><span class="p">,</span> <span class="n">api_key</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</code></pre></div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-function">
 <h3 class="doc doc-heading" id="pysatellite.cli.ping">
 <code class="highlight language-python"><span class="n">ping</span><span class="p">()</span></code>
 </h3>
@@ -359,154 +299,6 @@ to use the function.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">ping</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="sd">"""살았니~ 죽었니?"""</span>
     <span class="k">return</span> <span class="s1">'pong'</span>
-</code></pre></div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="pysatellite.cli.what_are_you_doing">
-<code class="highlight language-python"><span class="n">what_are_you_doing</span><span class="p">()</span></code>
-</h3>
-<div class="doc doc-contents">
-<p>지금 뭐하고 있는지 묻는 질문에 답을함</p>
-<p><strong>Returns:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>str</code></td>
-<td><p>블라블라~</p></td>
-</tr>
-</tbody>
-</table> <div class="admonition todo">
-<p class="admonition-title">Todo</p>
-<ul>
-<li>외계어 지원</li>
-<li>암호문 전송</li>
-<li>암호화 처리 후 회신</li>
-</ul>
-</div>
-<details class="quote">
-<summary>Source code in <code>pysatellite/cli.py</code></summary>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">what_are_you_doing</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="sd">"""지금 뭐하고 있는지 묻는 질문에 답을함</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        블라블라~</span>
-
-<span class="sd">    Todo:</span>
-<span class="sd">        - 외계어 지원</span>
-<span class="sd">        - 암호문 전송</span>
-<span class="sd">        - 암호화 처리 후 회신</span>
-<span class="sd">    """</span>
-    <span class="n">대답_뭉치</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"It's circling around the Earth. Oh! I'm dizzy."</span><span class="p">,</span>
-             <span class="s2">"잇스 서컬링 어라운드 디 이에얄티에이치 오우 아임 디지."</span><span class="p">,</span>
-             <span class="s2">"지구 주위를 돌고 있어. 오! 어지럽다."</span><span class="p">,</span>
-             <span class="s2">"wlrn wndnlfmf ehfrh dlTdj. dh! djwlfjqek."</span><span class="p">]</span>
-
-    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">대답_뭉치</span><span class="p">)</span>
-</code></pre></div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="pysatellite.cli.where_are_you_now">
-<code class="highlight language-python"><span class="n">where_are_you_now</span><span class="p">(</span><span class="n">satellite_id</span><span class="p">,</span> <span class="n">api_key</span><span class="p">,</span> <span class="n">observer_lat</span><span class="o">=</span><span class="mf">37.44</span><span class="p">,</span> <span class="n">observer_lng</span><span class="o">=</span><span class="mf">126.96</span><span class="p">,</span> <span class="n">observer_alt</span><span class="o">=</span><span class="mf">592.0</span><span class="p">,</span> <span class="n">seconds</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code>
-</h3>
-<div class="doc doc-contents">
-<p>인공위성의 위도,경도,고도 등의 정보 수신</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>satellite_id</code></td>
-<td><code>int</code></td>
-<td><p>인공위성 식별 id</p></td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>api_key</code></td>
-<td><code>str</code></td>
-<td><p>api key</p></td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>observer_lat</code></td>
-<td><code></code></td>
-<td><p>Observer's latitide (decimal degrees format)</p></td>
-<td><code>37.44</code></td>
-</tr>
-<tr>
-<td><code>observer_lng</code></td>
-<td><code></code></td>
-<td><p>Observer's longitude (decimal degrees format)</p></td>
-<td><code>126.96</code></td>
-</tr>
-<tr>
-<td><code>observer_alt</code></td>
-<td><code></code></td>
-<td><p>Observer's altitude above sea level in meters</p></td>
-<td><code>592.0</code></td>
-</tr>
-<tr>
-<td><code>seconds</code></td>
-<td><code></code></td>
-<td><p>Number of future positions to return. Each second is a position. Limit 300 seconds</p></td>
-<td><code>1</code></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>dict</code></td>
-<td><p>https://www.n2yo.com/api/#positions</p></td>
-</tr>
-</tbody>
-</table>
-<details class="quote">
-<summary>Source code in <code>pysatellite/cli.py</code></summary>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">where_are_you_now</span><span class="p">(</span><span class="n">satellite_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">api_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">observer_lat</span><span class="o">=</span><span class="mf">37.44</span><span class="p">,</span> <span class="n">observer_lng</span><span class="o">=</span><span class="mf">126.96</span><span class="p">,</span> <span class="n">observer_alt</span><span class="o">=</span><span class="mf">592.0</span><span class="p">,</span> <span class="n">seconds</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-    <span class="sd">"""인공위성의 위도,경도,고도 등의 정보 수신</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        satellite_id: 인공위성 식별 id</span>
-<span class="sd">        api_key: api key</span>
-<span class="sd">        observer_lat: Observer's latitide (decimal degrees format)</span>
-<span class="sd">        observer_lng: Observer's longitude (decimal degrees format)</span>
-<span class="sd">        observer_alt: Observer's altitude above sea level in meters</span>
-<span class="sd">        seconds: Number of future positions to return. Each second is a position. Limit 300 seconds</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        https://www.n2yo.com/api/#positions</span>
-<span class="sd">    """</span>
-
-    <span class="n">URL</span> <span class="o">=</span> <span class="s2">"https://api.n2yo.com/rest/v1/satellite/positions"</span>
-    <span class="n">api</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">URL</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">satellite_id</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">observer_lat</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">observer_lng</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">observer_alt</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">seconds</span><span class="si">}</span><span class="s2">/&amp;apiKey=</span><span class="si">{</span><span class="n">api_key</span><span class="si">}</span><span class="s2">"</span>
-
-    <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">api</span><span class="p">)</span>
-    <span class="n">json_dict</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">json_dict</span>
 </code></pre></div>
 </details>
 </div>
@@ -668,7 +460,7 @@ I don't know yet.
 </div>
 <a class="md-top md-icon" data-md-component="top" data-md-state="hidden" href="#">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path></svg>
-            맨위로
+            Back to top
           </a>
 </main>
 <footer class="md-footer">
@@ -716,8 +508,8 @@ I don't know yet.
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "search.config.lang": "en", "search.config.pipeline": " ", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\uac80\uc0c9", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version.title": "\ubc84\uc804 \uc120\ud0dd"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
-<script src="../assets/javascripts/bundle.2b46852b.min.js"></script>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "search.config.lang": "en", "search.config.pipeline": " ", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\uac80\uc0c9", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+<script src="../assets/javascripts/bundle.716f8af4.min.js"></script>
 <script src="https://unpkg.com/mermaid@8.7.0/dist/mermaid.min.js"></script>
 </body>
 </html>
